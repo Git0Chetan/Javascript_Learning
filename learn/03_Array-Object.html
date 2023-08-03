@@ -16,11 +16,20 @@
     
 
     <script>
+        document.write(" <center><h4>RESULTS</h4> <br>")
         var num=[2,3,4,5,6,7];
-        console.log(num);
+        document.write(num  +"<br>");
         var num1=["che","roh","bhu"];
-        console.log(num1);
-        console.log(num1[0]);
+        document.write(num1 +"<br>" );
+        document.write(num1[0]  +"<br>");
+        num[0]=1000;
+        document.write(num   +"<br>");
+        num.pop();
+        document.write(num  +"<br>");
+        num.push(2000);
+        document.write(num  +"<br>");
+        num.reverse();
+        document.write(num  +"<br>");
 
 
         var obj={};
@@ -31,11 +40,14 @@
             d:undefined
         };
 
-        console.log(obj);
-        console.log(obj.a);
-        console.log(obj.b);
-        console.log(obj.c);
-        console.log(obj.d);
+        document.write(obj  +"<br>");
+        // document.write(obj.a  +"<br>");
+        // document.write(obj.b  +"<br>");
+        // document.write(obj.c  +"<br>");
+        // document.write(obj.d  +"<br> </center>");
+        for(a in obj){
+            document.write(obj[a] +"<br>");
+        }
         
 
     </script>
