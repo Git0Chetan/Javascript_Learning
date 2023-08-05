@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window</title>
+</head>
+<body>
+    <center><h1>window title</h1></center>
+    <center>
+        <h3>results from js</h3>
+        <div id="dd">
+
+        </div>
+    </center>
+
+
+    <script>
+        let i=document.getElementById("dd");
+        
+        var p=document.createElement('p');
+        i.appendChild(p);
+        setTimeout(()=>{
+            p.innerHTML="location-> " + (window.location)+"<br>";
+        },2000)
+
+        var p1=document.createElement('p');
+        i.appendChild(p1);
+        setTimeout(()=>{
+            p1.innerHTML="history-> " + (window.history.back())+"<br>";
+        },2000)
+
+
+        var p2=document.createElement('p');
+        p2.textContent=(window.document.title);
+        i.appendChild(p2);
+
+
+        var p3=document.createElement('p');
+        p2.textContent="height -> " + (window.screen.height) + " width->" + (window.screen.width);
+        i.appendChild(p3);
+        
+
+
+    </script>
+</body>
+</html>
