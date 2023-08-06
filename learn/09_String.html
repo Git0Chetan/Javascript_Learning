@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <style>
+        body{
+            background-color: azure;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Strings Functions</h1>
+        <div id="d">
+
+        </div>
+    </center>
+
+    <script>
+    let d=document.getElementById("d");
+    let p1=document.createElement('p');
+    p1.textContent="RESULTS OF JAVASCRIPT::";
+    d.append(p1);
+
+    let d1=document.createElement('p');
+    d.append(d1);
+
+    var s1="Learning JS";
+    d1.innerHTML="s1= "+s1;
+    d1.innerHTML+="<br> s1.at(1)= "+s1.at(1);
+    d1.innerHTML+="<br> s1.charat(1)= "+s1.charAt(1);
+    d1.innerHTML+="<br> s1.charCodeat(1)= "+s1.charCodeAt(1);
+    var s2=" web";
+    d1.innerHTML+="<br> s1 concat s2= "+ s1.concat(s2);
+    d1.innerHTML+="<br> s1 endswith web= "+ s1.endsWith('web');
+    d1.innerHTML+="<br> s1 endswith JS= "+ s1.endsWith('JS');
+    d1.innerHTML+="<br> create string fromcharcode= "+ String.fromCharCode(72,101,108,108,111);
+    d1.innerHTML+="<br> check substring s.includes(ning)= "+ s1.includes("ning");
+    d1.innerHTML+="<br>index of first occurence indexof() = "+ s1.indexOf('n');
+    d1.innerHTML+="<br>index of last occurence lastindexof() = "+ s1.lastIndexOf('n');
+    d1.innerHTML+="<br> comapare s1.localecomapre()= "+ s1.localeCompare(s2);
+    d1.innerHTML+="<br> pads another string until the length padstart= "+ s1.padStart(20,'x');
+    d1.innerHTML+="<br> pads another string until the length padEnd()= "+ s1.padEnd(20,'x');
+    d1.innerHTML+="<br> return a string repeated="+ s2.repeat(3);
+    d1.innerHTML+="<br> return a string replaced="+ s2.replace('web','webdevelopment');
+    //search
+    d1.innerHTML+="<br> string slice= "+ s1.slice(0,8);
+    d1.innerHTML+="<br> string to objects split= "+ s1.split(' ');
+    d1.innerHTML+="<br> string startsWith= "+ s1.startsWith('Learning');
+    d1.innerHTML+="<br> string substring= "+ s1.substring(0,8);
+    d1.innerHTML+="<br> string tolowercase= "+ s1.toLocaleLowerCase();
+    d1.innerHTML+="<br> string toUppercase= "+ s1.toUpperCase();
+    var num=3333;
+    d1.innerHTML+="<br num is"+num;
+    d1.innerHTML+="<br> num tostring= "+ num.toString();
+    var ss="     h   djdjjd   g     ";
+    d1.innerHTML+="<br string is"+ss;
+    d1.innerHTML+="<br> trim string= "+ ss.trim();
+    d1.innerHTML+="<br> trim start string= "+ ss.trimStart();
+    //trim end
+
+
+
+
+
+
+    
+    
+    
+    
+
+    </script>
+</body>
+</html>
