@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snippets</title>
+    <style>
+        body{
+            background-color: azure;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Strings Functions</h1>
+        <div id="d">
+
+        </div>
+    </center>
+
+    <script>
+    let d=document.getElementById("d");
+    let p1=document.createElement('p');
+    p1.textContent="RESULTS OF JAVASCRIPT::";
+    d.append(p1);
+
+    let d1=document.createElement('p');
+    d.append(d1);    
+    d1.innerHTML=(new Date());
+    var a=[3,4,5];
+    d1.innerHTML+="<br>" + Array.isArray(a);
+    var b=[6,5,9,7,8];
+    let c=a.concat(b);
+    d1.innerHTML+="<br> concat two array : "+ c;
+    d1.innerHTML+="<br> remove duplicate: "+ [...new Set(c)];
+    b.sort((A,D)=> A-D);
+    d1.innerHTML+="<br> sort: "+ b;
+    d1.innerHTML+="<br> reverse: "+ b.reverse();
+    var e="1234";
+    d1.innerHTML+="<br> datatype before : "+ typeof(e);
+    d1.innerHTML+="<br> convert string to num: "+ parseInt(e);
+    d1.innerHTML+="<br> datatype now : "+ typeof(parseInt(e));
+    var f=Math.floor(Math.random()*(20-10+1))+10;
+    d1.innerHTML+="<br> generate two values between a range 10-20  : "+ f;
+    d1.innerHTML+="<br> CHeck for substring  : "+ e.includes("23");
+    let Object={
+        aa:"rahul",
+        bb:"chetan",
+        cc:45
+    };
+
+    // d1.innerHTML+="<br> object "+ Object.keys(object).length;
+    
+    
+
+
+    
+
+    
+
+    </script>
+</body>
+</html>
