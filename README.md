@@ -4,6 +4,8 @@ Here is the repository to learn js and implement some javascript easy to learn p
 javascript programs are added in the html file.
 Outputs of every js will be displayed on the screen because DOM is used🙃.
 
+we can use the javascript code in vscode also and use the command "node filename" so it will run.
+
 
 ![js-circle-black-design-logo-30](https://github.com/Git0Chetan/Javascript_Learning/assets/123874710/76bc0c20-a6d1-4e0b-a82b-721f9f1f630c)
 
