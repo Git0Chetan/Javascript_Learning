@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>short tricks</title>
+</head>
+<body>
+    <center>
+        <p><b> 
+            inspect->console->
+        </b></p>
+    </center>
+
+    <script>
+
+        //condition true
+        let t=true;
+        if(t=true){
+            console.log("t is true");
+        }
+        if(t){
+            console.log("t is true");
+        }
+
+        //Arrow function
+        function greet(name){
+            console.log("hey "+name);
+        }
+        greet('chetan');
+
+        const gret=(name)=>console.log("hey -"+name);
+        gret('PAtil');
+
+
+        //Template literal
+        const name="chetan";
+        const sur="Patil"
+        console.log("hello "+name+" "+sur);
+        console.log(`Hello from- ${name} ${sur}`);
+
+        //Poer of any number
+        console.log(Math.pow(3,6));
+        console.log(3**6);
+
+
+        //Assignment operator
+        let x=5;
+        let y=10;
+        console.log(x=x+y);
+        console.log(x+=y);
+
+
+        //Declaring variables
+        var a;
+        var b;
+        var c=90;
+
+        var a,b,c=90;
+
+
+        //termery operator
+        let age=20;
+        if(age>18){
+            console.log("Adult");
+        }
+        else{
+            console.log("Teen");
+        }
+
+        (age>18)?console.log("Adult"):console.log("Teen");
+
+        
+        
+
+    </script>
+</body>
+</html>
