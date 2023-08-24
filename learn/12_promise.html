@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <center>
+        <img src="img/promise.png" width=40% height=20% alt="load">
+    </center>
+    
+    <script>
+        //Promise creation
+        var promise=new Promise(function(resolve,reject){
+            const x ="chetan";
+            const y ="patil";
+
+            if(x===y){
+                resolve();
+            }
+            else{
+                reject();
+            }
+        });
+
+
+        //CAlling promise
+        promise.then(
+            ()=>{
+                console.log('success,chetan');
+            },
+            ()=>{
+                console.log("some issue chetan");
+            }
+        );
+
+        // promise.all
+        //     if all the promises provided to it are fullfilled or if one of promise rejected
+        // promise.race
+        //     is fullfilled when one of the promise is settled(accept or reject)
+        // promise.allsettled
+        //     returns when all promises settled
+
+        // syntax fro all just change name
+        // Promise.all([promise1,promise2])
+        // .then(([promise1respnse,promise2response])=>{
+
+        // });
+            
+    </script>
+</body>
+</html>
