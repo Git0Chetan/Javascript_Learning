@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <div class="cla"></div>
+    <div class="cla"></div>
+    <div class="cla"></div>
+    <div class="cla"></div>
+
+    <p id="p"></p>
+
+    <span></span>
+    <span>..</span>
+    <span>..</span>
+    <span>..</span>
+
+
+    <script>
+        let tag=document.getElementsByTagName('li');
+        let a=tag.length;
+        for(let i=0;i<a;i++){
+            tag[i].innerHTML="chetan tag selector";
+        }
+
+        let clas = document.getElementsByClassName('cla');
+        let c=clas.length;
+        for(let i=0;i<c;i++){
+            clas[i].innerHTML="chetan class selector";
+        }
+
+        let p=document.getElementById('p');
+        p.innerHTML="chetan id selector"
+
+        let query=document.querySelector('span');
+        query.innerHTML="chetan query selector";
+        
+        let queryall=document.querySelectorAll('span');
+        for(let i=0;i<queryall.length;i++){
+            queryall[i].innerHTML+="chetan queryall selector";
+        }
+        
+
+
+    </script>
+</body>
+</html>
