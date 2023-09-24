@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: beige;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        button{
+            margin:1%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Object Operations</h1>
+        <button onclick="createObject()">Create Object</button>
+        <button onclick="addProperty()">Add Property</button>
+        <button onclick="updateProperty()">Update Property</button>
+        <button onclick="deleteProperty()">Delete Property</button>
+        <button onclick="searchProperty()">Search Property</button>
+        <button onclick="displayObject()">Display Object</button>
+        <p id="result"></p>
+    </div>
+
+    <script src="07_Objects.js"></script>
+</body>
+</html>
