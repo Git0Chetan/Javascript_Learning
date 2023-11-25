@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pass by Value and Pass by Reference</title>
+</head>
+<body>
+
+<div id="output"></div>
+
+<script>
+  // Pass by Value Example
+  function passByValueExample(value) {
+    value = 10; // Changes made inside the function do not affect the original value
+    document.getElementById('output').innerHTML += 'Inside passByValueExample: ' + value + '<br>';
+  }
+
+  var num = 5;
+  document.getElementById('output').innerHTML += 'Before passByValueExample: ' + num + '<br>';
+  passByValueExample(num);
+  document.getElementById('output').innerHTML += 'After passByValueExample: ' + num + '<br>';
+
+  // Pass by Reference Example
+  function passByReferenceExample(obj) {
+    obj.property = 'updated'; // Changes made inside the function affect the original object
+    document.getElementById('output').innerHTML += 'Inside passByReferenceExample: ' + obj.property + '<br>';
+  }
+
+  var myObject = { property: 'original' };
+  document.getElementById('output').innerHTML += 'Before passByReferenceExample: ' + myObject.property + '<br>';
+  passByReferenceExample(myObject);
+  document.getElementById('output').innerHTML += 'After passByReferenceExample: ' + myObject.property + '<br>';
+</script>
+
+</body>
+</html>
