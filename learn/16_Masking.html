@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAsking</title>
+</head>
+<body>
+
+    <div class="form">
+        Mobile:<input type="text" id="num" placeholder="Enter your mobile no.">
+        <button onclick="mask()">click here</button>
+        <p id="out"></p>
+
+    </div>
+    
+
+    <script>
+function maskingString(str, start, end) {
+   if (!str || start < 0 || start >= str.length || end < 0 || end > str.length || start >= end) {
+      return str;
+   }
+   const maskLength = end - start;
+   const maskedStr = str.substring(0, start) + "*".repeat(maskLength) + str.substring(end);
+   return maskedStr;
+}
+
+function mask(){
+    const inputStr =document.getElementById("num").value;
+    const maskedStr = maskingString(inputStr, 2, inputStr.length-2);
+    document.getElementById("out").innerHTML=maskedStr;
+}
+
+    </script>
+</body>
+</html>
