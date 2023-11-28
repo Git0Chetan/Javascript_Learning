@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paarrr</title>
+</head>
+<body>
+    <!-- Here we have an example of a clickable element calling a function and passing a parameter -->
+<div>Try giving the text below a clickity-click:</div>
+<div id="exampleElement" onClick="exampleFunction('after clicking')">before clicking</div>
+
+<br /><br /><br />
+
+
+
+<!-- Here is another more elaborate example to show-off how some logic can work -->
+<!-- In this example, we create buttons that will change the text in  our display -->
+<div id="selectedText">No text selected</div>
+<button onClick="selectText('many logic')">many logic</button>
+<button onClick="selectText('much website')">much website</button>
+<button onClick="selectText('very code')">very code</button>
+
+
+<script>
+    // Here we define a function that accepts a parameter.
+// A parameter is simply data that can be passed into a function.
+// In this example we will pass in a string of "after clicking" which this function then uses to set the value of our div.
+function exampleFunction(parameter) {
+    document.getElementById('exampleElement').innerHTML = parameter;
+    // This previous line might look a little complicated. Welcome to vanilla JS lol.
+    // All this is doing is asking the DOM "I want the data for the element with an ID of "exampleElement", then we say "set the innerHTML to the value of whatever was passed as the parameter". innerHTML is simply the children elements.
+    // Technically, we could set innerHTML to "<span>hello</span>" and it would add an element.
+}
+
+
+
+
+// Here are the functions used in our second example.
+
+// We actually jump through 2 functions this time to dynamically generate our text
+function selectText(string) {
+    // Here, we get passed a parameter of "string", then we use that as part of the input for a new variable called "newString".
+    // Note: I used "const" here to declare the variable, but you might still be using "var". Essentially the same thing, just slight differences.
+    const newString = string + ", bro!";
+    // Notice the line above doesn't give a crap what "string" was, we just slap extra text on the end of it. Then we use that new combination and we call another function.
+    setSelectedText(newString);
+}
+
+function setSelectedText(text) {
+    // This is the second function in the chain. At this point, we don't care how the "text" parameter was created. All this function does is plops it into the element.
+    document.getElementById('selectedText').innerHTML = text;
+}
+</script>
+</body>
+</html>
