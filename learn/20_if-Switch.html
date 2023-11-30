@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If switch statement
+    </title>
+    <style>
+        body {
+    font-size: 18px;
+    line-height: 2rem;
+    margin: 20px;
+    padding: 20px;
+    font-family: Beatrice,"Helvetica Neue",Arial,sans-serif;
+    background: #79c9ec;
+    position: relative;
+    min-height: 100vh;
+    color: #000;
+}
+p {
+font-family: "Times New Roman", Times, serif;
+  font-size: 28px;
+  background-color: pink;
+  width: 60%;
+  padding: 15px;
+}
+
+main {
+  padding-top: 50px;
+  font-size: 24px;
+}
+
+select {
+  // A reset of styles, including removing the default dropdown arrow
+  appearance: none;
+  // Additional resets for further consistency
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 25%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+}
+    </style>
+</head>
+<body>
+    <<h1>Simple switch example</h1>
+    <nav><label for="weather">Select the season type today:</label><br>
+        <select id="weather">
+          <option value="">--Make a choice--</option>
+          <option value="winter">Winter</option>
+          <option value="fools">Fool's Spring</option>
+          <option value="secondwin">Second Winter</option>
+          <option value="deception">Spring of Deception</option>
+          <option value="thirdwin">Third Winter</option>
+          <option value="pollening">The Pollening</option>
+          <option value="actual">Actual Spring</option>
+          <option value="summer">Summer</option>
+          <option value="hell">Hell's Front Porch</option>
+          <option value="fake">Fake Fall</option>
+          <option value="secondsum">Second Summer</option>
+          <option value="falling">Actual Fall</option>
+        </select>
+      <p> And the cycle continues.</p>
+    </nav>
+    
+    <main>
+    Remember, for these switch statements the colon is used rather than the semicolon after "case."
+    </main>
+
+    <script>
+        /*jQuery code for HTML Example 1*/
+$(document).ready(function(){/*when the document is ready execute the code below*/
+  $("#old").click(function(){/*when the element with the id old is click execute the code below with this function*/
+      var ageBox = $("#aBox").val();/*create a variable and store the value of what is inputted into the element with the id aBox*/
+      switch(ageBox){/*start a switch statement that compares the value of ageBox to the value of each of the following case statements*/
+      case '10': alert("you are a baby");/*does ageBox value match the value 10?  If so, execute the code before the break. Create an alert box that says "you are a baby"*/
+      break; //end case
+      case '20': alert("almost legal to drinking age");/*does ageBox value match the value 20?  If so, execute the code before the break. Create an alert box that says "almost legal to drinking age"*/
+      break;//end case
+      case '30': alert("slow down your getting there");/*does ageBox value match the value 30?  If so, execute the code before the break. Create an alert box that says "slow down your getting there"*/
+      break;//end case
+      default: alert("try again");/*ageBox value did not match any case value so execute this code*/
+      }//end switch
+   });//end click function
+   });//end ready function
+
+/*jQuery code for HTML Example 2*/
+$(document).ready(function(){/*when the document is ready execute the code below*/
+  $("#ride").click(function(){/*when the element with the id ride is click execute the code below with this function*/
+      var hBox = $("#hBox").val();/*create a variable and store the value of what is inputted into the element with the id hBox*/
+      switch(true){/*start a switch statement that test the value of hBox to the value of each of the following case statements to see which case is true*/
+      case (hBox < 48): /*does hBox value make this expression/condition true?  If so, execute the code before the break."*/
+                        alert("you are too short to ride the roller coaster");
+                        $("body").css("background-color", "red");
+      break;
+      case (hBox < 72): /*does hBox value make this expression/condition true?  If so, execute the code before the break."*/
+                        alert("enjoy the ride");
+                        $("h1").css("color", "green");
+      break;
+      default: /*No case evaluates to true. Therefore, execute this code."*/
+          alert("duck if you think your gonna bump your head");
+      }//end switch
+   });
+   });
+
+/*This is how Example 1 would look if it was an if/else statement*/
+/*$(document).ready(function(){
+$("#old").click(function(){
+ var ageBox = $("#aBox").val();
+if(ageBox == 10){
+  alert("you are a baby");
+}
+else if(ageBox == 20)
+  {
+    alert("almost legal to drinking age");
+}
+else if(ageBox == 30)
+{
+  alert("slow down your getting there");
+}
+else
+{
+  alert("try again");
+}
+)};
+)};*/
+
+
+
+    </script>
+    
+  </div>
+</section>
+
+<script>
+    const select = document.querySelector('select');
+const para = document.querySelector('p');
+      let temperature = 29;
+
+      select.onchange = setWeather;
+
+      function setWeather() {
+        const choice = select.value;
+
+        switch(choice) {
+          case 'winter':
+            para.textContent = 'We all know this one.  Bitter cold, snow and ice. By far, my least favorite time of the year.';
+break;
+          case 'fools':
+          para.textContent = 'Sure feels like Spring, but Minnesotans know Mother Nature is just messing with us.';
+        break;
+          case 'secondwin':
+          para.textContent = 'How about another blizzard just to show who\'s boss?  This can be downright depressing.';
+        break;
+          case 'deception':
+          para.textContent = 'Aww yeah, now we\'re talking. Nice temps. Spring is in the air.';
+          break;
+          case 'thirdwin':
+          para.textContent = 'Hey, how about just one more round of snow?';       
+        break;
+          case 'pollening':
+          para.textContent = 'After all the crappy weather has kept your sinuses guessing, it\'s now time to let allergies destroy you.';
+        break;
+          case 'actual':
+          para.textContent = 'The trees are budding and occasional rain showers are washing away all the Winter slime. Yeah, it\'s here!';
+          break;
+          case 'summer':
+          para.textContent = 'Mild daytime temps and cool nights. Bugs have figured out where you are.';
+        break;
+          case 'hell':
+          para.textContent = 'Hot and humid with the occasional thunder boomer. Maybe even a tornado or two. Great time to get out on the lake to get a sunburn.';
+        break;
+          case 'fake':
+          para.textContent = 'Cooler temps and time to get the warmer wardrobe out but DON\'T put away the Summer stuff quite yet.';
+        break;
+          case 'secondsum':
+          para.textContent = 'It\'s back!  Enjoy the great temps and take advantage of the mild weather to clean up the leaves that have given up for the year.';
+        break;
+          case 'falling':
+          para.textContent = 'Finally here, that grease slide to Winter we call Fall. RIP bugs.';
+        break;
+        default:
+           para.textContent = '';
+        }
+      }
+      </script>
+
+    
+</body>
+</html>
