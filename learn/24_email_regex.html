@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regex in JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #result {
+      margin-top: 10px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+<form id="emailForm">
+  <label for="email">Enter Email:</label>
+  <input type="text" id="email" name="email">
+  <button type="button" onclick="validateEmail()">Validate</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+  function validateEmail() {
+    // Get the value from the input field
+    const emailInput = document.getElementById('email').value;
+
+    // Regular expression for a simple email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Test the input against the regex
+    const isValid = emailRegex.test(emailInput);
+
+    // Display the result on the screen
+    const resultElement = document.getElementById('result');
+    if (isValid) {
+      resultElement.style.color = 'green';
+      resultElement.textContent = 'Email is valid!';
+    } else {
+      resultElement.style.color = 'red';
+      resultElement.textContent = 'Invalid email format!';
+    }
+  }
+</script>
+
+</body>
+</html>
