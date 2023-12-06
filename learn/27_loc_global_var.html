@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local and Global</title>
+</head>
+<body>
+    <script>
+
+    
+    let glob="I am global variable";
+    function call(){
+        let loc="I am Local VAriable";
+        document.write("<b>"+glob+"</b>");
+        document.write("<br>");
+        document.write("<b>"+loc+"</b>");
+    }
+    document.write("inside the function");
+    document.write("<br>");
+    call();
+    document.write("<br>");
+    document.write("outside the function");
+    document.write("<br>");
+
+        document.write("<b>"+glob+"</b>");
+        document.write("<br>");
+        document.write("<b>"+loc+"</b>");
+
+    </script>
+</body>
+</html>
