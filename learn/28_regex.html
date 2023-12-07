@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+</head>
+<body>
+    <script>
+        let pattern=/\d+/;
+        let patter=/\d{3}(?!\w)/;
+        let str='444';
+        let str1='444rr';
+
+        document.writeln(pattern.exec(str));
+        document.write('\n');
+        document.writeln(pattern.exec(str1));
+        document.writeln(patter.exec(str));
+        document.write('\n');
+        document.writeln(patter.exec(str1));
+    </script>
+</body>
+</html>
