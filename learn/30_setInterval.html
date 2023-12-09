@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body>
+    <script>
+
+        let count=0;
+        let a=setInterval(function(){
+            document.writeln(`Hello count ${count}`);
+            document.write("<hr>")
+            count++;
+        },1500);
+
+        setTimeout(function(){
+            clearInterval(a);
+        },9000);
+    </script>
+</body>
+</html>
