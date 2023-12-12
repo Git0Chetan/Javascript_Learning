@@ -7,19 +7,20 @@
 </head>
 <body>
     <script>
-        let n=prompt("Enter a Number till which u want the sequence");
-        let d=prompt("What  Should be the gap between them");
 
-        document.write(`We will Start from Zero 0:`);
-        document.write("hr");
+        document.write("We will Start from Zero 0:");
+        document.write("<hr>");
+        let n=parseInt(prompt("Enter a Number till which u want the sequence"));
+        let d=parseInt(prompt("What  Should be the gap between them"));
         document.write(`The difference will be ${d} :`);
-        document.write("hr");
+        document.write("<hr>");
         document.write(`Sequence till ${n} :`);
-        document.write("hr");
+        document.write("<hr>");
         i=0;
-        for(i;i<n;i+d){
+
+        for(i;i<n;i=i+d){
             document.write(`:::${i}:::`);
-            document.write("hr");
+            document.write("<hr>");
         }
 
     </script>
