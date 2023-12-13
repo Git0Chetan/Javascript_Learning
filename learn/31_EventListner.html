@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Listner</title>
+    <style>
+        .one{
+            width: 10vw;
+            margin: 5vw;
+        }
+    </style>
 </head>
 <body>
-    <button onclick="clicck()">Click event</button>
-    <button onmouseover="mouse()">Mouse over</button>
-    <button ondblclick="doub()">on Double click</button>
+    <div style="height:100vh;  display: flex; justify-content: center; align-items: center;"> 
+    <button class="one" onclick="clicck()">Click event</button>
+    <button class="one" onmouseover="mouse()">Mouse over</button>
+    <button class="one" ondblclick="doub()">on Double click</button>
+    </div>
 
     <script>
         function clicck(){
