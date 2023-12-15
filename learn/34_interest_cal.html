@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest cal</title>
+</head>
+<body>
+    <script>
+        let amount=parseFloat( prompt("Enter the Amount "));
+        document.write(`<h3>The Principle Amount is : ${amount}</h3>`);
+        document.write("<hr>");
+
+        let Interest=parseFloat( prompt("Enter the Interest rate "));
+        document.write(`<h3>The Interest rate is : ${Interest}</h3>`);
+        document.write("<hr>");
+
+        let tenure=parseFloat( prompt("Enter the Tenure in months "));
+        document.write(`<h3>The Tenure is : ${tenure}</h3>`);
+        document.write("<hr>");
+
+        let inte=Interest/12;
+        let total=amount+((amount*inte*tenure)/100);
+        document.write(`<h1>THE TOTAL AMOUNT AFTER ${tenure} MONTHS IS : ${total}</h1>`);
+        document.write("<hr>")
+
+    </script>
+</body>
+</html>
