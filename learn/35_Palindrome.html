@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    <script>
+        let str=prompt("Enter the String which you want to check for palindrome ");
+        document.write(`<h3>The Given String is : ${str}</h3>`);
+        let ss="";
+        for(i=str.length-1;i>=0;i--){
+            ss+=str[i];
+        }
+
+        let ans=str==ss;
+        document.write(`<h1>The given string is Palindrome : ${ans}</h1>`);
+    </script>
+</body>
+</html>
