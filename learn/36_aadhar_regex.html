@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadhar Validation</title>
+    <style>
+        body{
+            background-color: rgb(170 170 13);
+
+            h1,h3,h2{
+                color: rgb(2, 49, 37);
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write("<h1>Aadhar Validation Program</h1>");
+        let aadhar=prompt("Enter your Aadhar number");
+        document.write(`<h3>The given Aadhar num is ${aadhar}</h3>`);
+        var expr = /^([0-9]{4}[0-9]{4}[0-9]{4}$)|([0-9]{4}\s[0-9]{4}\s[0-9]{4}$)|([0-9]{4}-[0-9]{4}-[0-9]{4}$)/;
+        if (!expr.test(aadhar)) {
+            document.write(`<h2>The given Aadhar num is Invalid</h2>`);
+        }
+        else{
+            document.write(`<h3>The given Aadhar num is Valid</h3>`);
+        }
+ 
+    </script>
+</body>
+</html>
