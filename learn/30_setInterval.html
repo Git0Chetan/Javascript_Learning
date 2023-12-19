@@ -4,20 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Set Interval</title>
+    <style>
+        body{
+            background-color: rgb(204, 158, 99);
+        }
+    </style>
 </head>
 <body>
     <script>
 
+        let delay=parseFloat(prompt("Enter the delay (in microsecond) you want in between "));
+        let num=parseFloat(prompt("how many iteration(in count) do you want"));
+        let nd=delay*num;
+        
         let count=0;
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++ ) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
         let a=setInterval(function(){
             document.writeln(`Hello count ${count}`);
-            document.write("<hr>")
+            document.write("<hr>");
+
+            function changeColor(){
+                document.body.style.backgroundColor= getRandomColor();
+            }
+            changeColor();
+
             count++;
-        },1500);
+        },delay);
+
 
         setTimeout(function(){
             clearInterval(a);
-        },9000);
+        },nd);
     </script>
 </body>
 </html>
