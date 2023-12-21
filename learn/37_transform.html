@@ -12,13 +12,20 @@
       transition: transform 0.5s ease;
       margin: 40px;
     }
+
+    body{
+      height:100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
   <title>Interactive Transform Properties</title>
 </head>
 <body>
 
 <div id="transformElement"></div>
-<button onclick="translate()">Translate</button>
+<button onclick="trans()">Translate</button>
 <button onclick="rotate()">Rotate</button>
 <button onclick="scale()">Scale</button>
 <button onclick="resetTransformations()">Reset</button>
@@ -27,8 +34,8 @@
   const element = document.getElementById('transformElement');
 
   // Function to apply translation
-  function translate() {
-    element.style.transform = 'translate(50px, 100px)';
+  function trans() {
+    element.style.transform = "translate(50px, 100px)";
   }
 
   // Function to apply rotation
