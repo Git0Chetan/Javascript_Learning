@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre {
+          padding: 1em;
+          color: #bada55;
+          display: block;
+          border-radius: 0.3em;
+          background-color: #000;
+          code {
+            color: #bada55;
+            background-color: #000;
+          }
+        }
+    </style>
+</head>
+<body>
+    <button id="fetchdata">Get Details</button>
+    <div id="result"></div>
+
+
+    <code><pre>
+        const fetchDataBtn = document.querySelector("#fetchdata");
+const result = document.querySelector("#result");
+
+// gets data from API and sets the content of #result div
+async function getData() {
+  result.innerText = "Loading....";
+  try {
+    const res = await fetch("https://api.github.com/users/gulshansainis");
+    const jsonResult = await res.json();
+    result.innerText = JSON.stringify(jsonResult, null, 2);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// add event listener for #fetchdata button
+fetchDataBtn.addEventListener("click", getData);
+    </pre></code>
+
+    <script>
+        const fetchDataBtn = document.querySelector("#fetchdata");
+const result = document.querySelector("#result");
+
+// gets data from API and sets the content of #result div
+async function getData() {
+  result.innerText = "Loading....";
+  try {
+    const res = await fetch("https://api.github.com/users/gulshansainis");
+    const jsonResult = await res.json();
+    result.innerText = JSON.stringify(jsonResult, null, 2);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// add event listener for #fetchdata button
+fetchDataBtn.addEventListener("click", getData);
+
+    </script>
+</body>
+</html>
