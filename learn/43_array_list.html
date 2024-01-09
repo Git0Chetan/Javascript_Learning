@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+  margin:5% auto;
+  width: 60%;
+  line-height:1.5em;
+  font-size: 1em;
+  color:#2f2f2f;
+  background: #e7e6dd;
+}
+
+    </style>
+</head>
+<body>
+    
+<h2>JS Array List Example</h2>
+
+<p>Click the button to add an item to the <code>myList[]</code> array.</p>
+
+<button onclick="myListFunction()">Add an  item</button>
+
+<p><strong>note:</strong> we are adding a new item to the inital grocery list array.</p>
+  Groceries: 
+  <span id="groceries">
+    <div id="parent">
+    <ul id="the-items-list">
+        <!-- empty list -->
+    </ul>
+</div>
+    
+  </span>
+
+  <script>
+
+// Initalize the Array with some items
+var myItems = ["Bananas", "Milk", "Bread", "Mango"];
+
+// display it on the page
+var list = $("#the-items-list");
+var parent = list.parent();
+
+// loop through items and build list
+list.detach().empty().each(function(i){
+    for (var x = 0; x < myItems.length; x++){
+        $(this).append('<li>' + myItems[x] + '</li>');
+        if (x == myItems.length - 1){
+            $(this).appendTo(parent);
+        }
+    }
+});
+
+
+// Add item button 
+function myListFunction() {
+    var newItem = prompt("add to the list");
+  $("#the-items-list").append('<li>' + newItem + '</li>');
+}
+  </script>
+</body>
+</html>
