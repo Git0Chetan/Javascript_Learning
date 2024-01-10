@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Stack</title>
+
+    <style>
+        .box {
+  width:50px;
+  height:50px;
+  border: 2px solid black;
+}
+
+.redbox {
+  width:50px;
+  height:50px;
+  background-color:red;
+}
+.bluebox {
+  width:50px;
+  height:50px;
+  background-color:blue;
+}
+.yellowbox {
+  width:50px;
+  height:50px;
+  background-color:yellow;
+}
+.border {
+  border: 1px solid black;
+}
+    </style>
+</head>
+<body>
+
+
+
+<div class="box"></div>
+
+<div class="box"></div>
+
+<div class="box"></div> 
+
+<div id="message"></div>
+
+<button onclick="changeColors()"> Click to change colors</button>
+
+<button onclick="reset()">
+  Reset</button>
+
+<p>See console for call stack</p>
+
+<script>
+
+
+function reset() {
+  document.getElementsByClassName("box")[0].classList.remove("bluebox");
+  document.getElementsByClassName("box")[1].classList.remove("redbox");
+  document.getElementsByClassName("box")[2].classList.remove("yellowbox");
+  console.log("reset");
+}
+
+function blue() {
+  document.getElementsByClassName("box")[0].classList.add("bluebox");
+  // document.getElementsByClassName("bluebox")[0].className = "yellowbox";
+  console.log("Step 1: added blue");
+}
+
+function red() {
+  document.getElementsByClassName("box")[1].classList.add("redbox");
+  // document.getElementsByClassName("redbox")[0].className = "bluebox";
+  console.log("Step 2: added red");
+}
+
+function yellow() {
+  document.getElementsByClassName("box")[2].classList.add("yellowbox");
+  // document.getElementsByClassName("yellowbox")[0].className = "redbox";
+  console.log("Step 3: added yellow");
+}
+
+function changeColors() {
+  blue();
+  red();
+  yellow();
+  document.getElementById("message").innerHTML = "colors changed!"
+  console.log("Step 4: added message");
+}
+</script>
+    
+</body>
+</html>
