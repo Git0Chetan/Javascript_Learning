@@ -80,9 +80,9 @@ function yellow() {
 }
 
 function changeColors() {
-  blue();
-  red();
-  yellow();
+  setTimeout(blue(), 1000); 
+  setTimeout(red(), 1000); 
+  setTimeout(yellow(), 1000); 
   document.getElementById("message").innerHTML = "colors changed!"
   console.log("Step 4: added message");
 }
