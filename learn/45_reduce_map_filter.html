@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+  padding: 16px;
+  font-family: sans-serif;
+  color: #fff;
+  background-color: #EF6C00;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+h1{
+  padding: 0; 
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+h2{
+  padding: 8px 0; 
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+pre{
+  opacity: 0.85;
+  background-color: rgba(0,0,0,0.1);
+  padding: 8px;
+}
+    </style>
+</head>
+<body>
+    <h1>TESTING THE NEW ES6 MAP, FILTER, FIND & REDUCE
+    </h1>
+    <p>
+      This is what the basic array looks like:
+      <pre id="basic">...</pre>
+      <h2>Array.map()</h2>
+      Now we try to map it to get a new array with only the name:
+      <pre>myArray.map(item => item.name);</pre>
+      <pre id="mapped">...</pre>
+      
+      <h2>Array.filter()</h2>
+      Next step is to filter, lets only get the items whose numer is strictly smaller than 7
+    
+      <pre>myArray.filter(item => (item.number < 7) );</pre>
+      <pre id="filtered">...</pre>
+      
+      <h2>Array.find()</h2>
+      Now we will find in the array the itme whose id is 99
+    
+      <pre>myArray.find(item => (item.number == 99) );</pre>
+      <pre id="found">...</pre>
+      
+      <h2>Array.reduce()</h2>
+      We will at this point try to find the total of the addition of the numbers, and also a string with all the names
+    
+      <pre>
+      myArray.reduce((mapped, item) => (
+        mapped += item.number;
+      ), 0); 
+      myArray.reduce((mapped, item) => (
+        mapped += `-${item.name}`;
+      ), "");
+    
+      </pre>
+      <pre id="reduced">...</pre>
+      So, yeah... Not so usefull, just like this (or maybe it is usefull for you, idk). For instance, we could get the second value with
+      <pre>myArray.join("-")</pre>
+      and the result will be even beter because we don't have this stupid '-' at the beggining... But yeah, for adding the numbers the function seems pretty usefull, we have to provide the function with a initial value (0 & "") as a second parameter because we are dealing with objects and otherwise the result would also have to be an object...<br><br>
+      Let's try to do something cooler, imagine this new array
+      
+      <pre id="basic-new">...</pre>
+      
+      What can we do with this, hm... well, a lot of stuff!<br>
+      We could get the entries with a score higher than 5, but that's too easy... let's mix thing up a little bit more! Let's get the comments of 'Beltegeuse'. 
+      
+      <pre>reviews.filter(item => (item.title == "Beltegeuse")).map(item => item.comment);</pre>
+      
+      <pre id="comments-only">...</pre>
+      
+      Now we're talking! That's a pretty awesome front-end utility, with just one (long) line of code! And if we wap it inside a function we can have a very cool way of getting array's info!
+      <br>
+      Let's try something harder... Let's for example get a list of the items, grouped by title, with the sum and the average of their scores, as well as an array of their comments (WOW, I may be going over my possibilities here...) 
+      <pre>reviews.reduce((result, current) => {
+      let titles = result.map(item => item.title);
+      let index = titles.indexOf(current.title);
+      if(index == -1){
+        result.push({
+          title: current.title,
+          sum: current.score,
+          average: current.score,
+          count: 1,
+          comments: [current.comment]
+        });
+      } 
+      else{
+        result[index].sum += current.score;
+        result[index].count++;
+        result[index].average = result[index].sum/result[index].count;
+        result[index].comments.push(current.comment)
+      }
+      return result;
+    }, []);</pre>
+      <pre id="groupby-title">...</pre>
+      Yeah, I now what you're thinking, that's not SOOOO much of an improvement, we could just loop throught the array and the the exact same thing with a few more lines... But I believe it is pretty cool, even though my groupBy function is pretty awful and probably can be improved a lot (I challenge you to do it!).
+      <br><br>
+      That's all for now! Enjoy this new cool ES6 features!
+    </p>
+
+
+
+    <script>
+        "use srict"
+
+let myArray = [
+  {
+    name: "buffalo",
+    number: 4
+  },
+  {
+    name: "antilope",
+    number: 1
+  },
+  {
+    name: "gazelle",
+    number: 7
+  },
+  {
+    name: "deer",
+    number: 6
+  },
+  {
+    name: "goat",
+    number: 99
+  }
+];
+
+document.getElementById("basic").innerHTML = JSON.stringify(myArray, null, 2);
+
+let mapped = myArray.map(item => item.name);
+
+document.getElementById("mapped").innerHTML = JSON.stringify(mapped, null, 2);
+
+let filtered = myArray.filter(item => (item.number < 7) );
+
+document.getElementById("filtered").innerHTML = JSON.stringify(filtered, null, 2);
+
+let found = myArray.find(item => (item.number == 99) );
+
+document.getElementById("found").innerHTML = JSON.stringify(found, null, 2);
+
+let reduced1 = myArray.reduce((mapped, item) => (mapped + item.number), 0);
+
+let reduced2 = myArray.reduce((mapped, item) => (
+  mapped += `-${item.name}`
+), "");
+
+document.getElementById("reduced").innerHTML = `${reduced1}\n${reduced2}`;
+
+let reviews = [
+  {
+    title: "Beltegeuse",
+    score: 7.2,
+    comment: "I love this star"
+  },
+  {
+    title: "Alpha Centauri",
+    score: 5.1,
+    comment: "Too close for me..."
+  },
+  {
+    title: "Beltegeuse",
+    score: 2.6,
+    comment: "I thought it was called Beetlejuice!"
+  },
+  {
+    title: "Bruce Willis",
+    score: 1,
+    comment: "Wow, someone thought Bruce was a real star, like... I mean... He's a real star but not REAL star... Oh man..."
+  }
+]
+
+document.getElementById("basic-new").innerHTML = JSON.stringify(reviews, null, 2);
+
+let commentsOnly = reviews.filter(item => (item.title == "Beltegeuse")).map(item => item.comment);
+
+document.getElementById("comments-only").innerHTML = JSON.stringify(commentsOnly, null, 2);
+
+let groupByTitle = reviews.reduce((result, current) => {
+  let titles = result.map(item => item.title);
+  let index = titles.indexOf(current.title);
+  if(index == -1){
+    result.push({
+      title: current.title,
+      sum: current.score,
+      average: current.score,
+      count: 1,
+      comments: [current.comment]
+    });
+  } 
+  else{
+    result[index].sum += current.score;
+    result[index].count++;
+    result[index].average = result[index].sum/result[index].count;
+    result[index].comments.push(current.comment)
+  }
+  return result;
+}, []);
+
+document.getElementById("groupby-title").innerHTML = JSON.stringify(groupByTitle, null, 2);
+
+//You're reading the full JS file, you must be very interested, let's make a few more tests 'console only' hehehe
+let miniArray = [
+  {a: 1, b: 1},
+  {a: 2, b: 2},
+  {a: 3, c:{d:3}}
+]
+
+let willItBreak = miniArray.map(item => item.b);
+console.log(willItBreak);
+//If the object is missing we get undefined... but what if we go one level further????
+try{
+  let willItBreak2 = miniArray.map(item => item.c.d);
+  console.log(willItBreak2);
+}catch(err){
+  console.log("it is broken!");
+  //As allways with javascript, if you try to go one stem further you'll get the famous 'cannot get X of undefined' and that is CRAP because it breaks your whole code if you have different properties and nested properties in one object... How to fix it? no easy way that I know.
+}
+
+//Maybe the MAP is not wotking, but what about, let's say... find?
+try{
+  let willItBreak2 = miniArray.find(item => (item.c.d == 3));
+  console.log(willItBreak2);
+}catch(err){
+  console.log("Also broken...");
+  //Everything works the same so why the f**k did I expect different results?
+}
+
+    
+
+    </script>
+</body>
+</html>
