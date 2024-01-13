@@ -216,7 +216,6 @@ let groupByTitle = reviews.reduce((result, current) => {
 
 document.getElementById("groupby-title").innerHTML = JSON.stringify(groupByTitle, null, 2);
 
-//You're reading the full JS file, you must be very interested, let's make a few more tests 'console only' hehehe
 let miniArray = [
   {a: 1, b: 1},
   {a: 2, b: 2},
@@ -225,22 +224,22 @@ let miniArray = [
 
 let willItBreak = miniArray.map(item => item.b);
 console.log(willItBreak);
-//If the object is missing we get undefined... but what if we go one level further????
+
 try{
   let willItBreak2 = miniArray.map(item => item.c.d);
   console.log(willItBreak2);
 }catch(err){
   console.log("it is broken!");
-  //As allways with javascript, if you try to go one stem further you'll get the famous 'cannot get X of undefined' and that is CRAP because it breaks your whole code if you have different properties and nested properties in one object... How to fix it? no easy way that I know.
+
 }
 
-//Maybe the MAP is not wotking, but what about, let's say... find?
+
 try{
   let willItBreak2 = miniArray.find(item => (item.c.d == 3));
   console.log(willItBreak2);
 }catch(err){
   console.log("Also broken...");
-  //Everything works the same so why the f**k did I expect different results?
+
 }
 
     
