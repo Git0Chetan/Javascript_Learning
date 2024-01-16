@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+  box-sizing: border-box;
+  font-family: "ff-meta-serif-web-pro", serif;
+  color: #555;
+  font-size: 16px;
+}
+@media (min-width: 6.25em) {
+  html {
+    font-size: 17px;
+  }
+}
+@media (min-width: 12.5em) {
+  html {
+    font-size: 18px;
+  }
+}
+@media (min-width: 18.75em) {
+  html {
+    font-size: 19px;
+  }
+}
+@media (min-width: 25em) {
+  html {
+    font-size: 20px;
+  }
+}
+@media (min-width: 31.25em) {
+  html {
+    font-size: 21px;
+  }
+}
+@media (min-width: 37.5em) {
+  html {
+    font-size: 22px;
+  }
+}
+@media (min-width: 43.75em) {
+  html {
+    font-size: 23px;
+  }
+}
+@media (min-width: 50em) {
+  html {
+    font-size: 24px;
+  }
+}
+@media (min-width: 56.25em) {
+  html {
+    font-size: 25px;
+  }
+}
+@media (min-width: 62.5em) {
+  html {
+    font-size: 26px;
+  }
+}
+@media (min-width: 68.75em) {
+  html {
+    font-size: 27px;
+  }
+}
+@media (min-width: 75em) {
+  html {
+    font-size: 28px;
+  }
+}
+@media (min-width: 81.25em) {
+  html {
+    font-size: 29px;
+  }
+}
+@media (min-width: 87.5em) {
+  html {
+    font-size: 30px;
+  }
+}
+@media (min-width: 93.75em) {
+  html {
+    font-size: 31px;
+  }
+}
+@media (min-width: 100em) {
+  html {
+    font-size: 32px;
+  }
+}
+@media (min-width: 106.25em) {
+  html {
+    font-size: 33px;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 34px;
+  }
+}
+@media (min-width: 118.75em) {
+  html {
+    font-size: 35px;
+  }
+}
+@media (min-width: 125em) {
+  html {
+    font-size: 36px;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/**
+ * The fixed Side 
+ */
+.side {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  width: 50px;
+  border-right: 1px dashed rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.5);
+  font-family: "nimbus-sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .0875rem;
+  font-size: 9px;
+  -webkit-transition: all 0.3s cubic-bezier(0.05, 0.69, 0.14, 1);
+  transition: all 0.3s cubic-bezier(0.05, 0.69, 0.14, 1);
+}
+.side:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+.side .side__inner {
+  position: relative;
+  height: 100%;
+  white-space: nowrap;
+}
+.side a {
+  color: inherit;
+  word-spacing: 0;
+  -webkit-transition: all 0.3s cubic-bezier(0.05, 0.69, 0.14, 1);
+  transition: all 0.3s cubic-bezier(0.05, 0.69, 0.14, 1);
+}
+.side .top,
+.side .bottom {
+  position: absolute;
+  left: 0;
+  -webkit-transform: rotate(-90deg) perspective(1px);
+          transform: rotate(-90deg) perspective(1px);
+  -webkit-transform-origin: 50px 50px;
+          transform-origin: 50px 50px;
+  height: 50px;
+  line-height: 50px;
+  white-space: nowrap;
+  word-spacing: .5rem;
+}
+.side .top {
+  top: 25px;
+  text-align: right;
+  color: black;
+}
+.side .bottom {
+  top: auto;
+  bottom: 75px;
+}
+.side .bottom:hover a {
+  color: rgba(0, 0, 0, 0.2);
+}
+.side .bottom:hover a:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/**
+ * The first navigation
+ */
+.anchornav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.anchornav li {
+  display: block;
+}
+.anchornav li::after {
+  content: '';
+  width: 1.3rem;
+  display: block;
+  height: 2px;
+  background: black;
+}
+.anchornav li:last-child::after {
+  display: none;
+}
+.anchornav a {
+  display: block;
+  padding: 1em 0;
+  font-family: "nimbus-sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  color: inherit;
+  -webkit-transition: all 0.3s cubic-bezier(0.05, 0.69, 0.14, 1);
+  transition: all 0.3s cubic-bezier(0.05, 0.69, 0.14, 1);
+}
+.anchornav a span {
+  display: inline;
+  padding: .5em 0 0;
+  opacity: .3;
+  letter-spacing: normal;
+  font-family: "ff-meta-serif-web-pro", serif;
+  text-transform: none;
+}
+.anchornav a:hover {
+  color: #de5f5f;
+}
+.anchornav a:hover span {
+  opacity: 1;
+  color: #181818;
+}
+
+/**
+ * The different sections
+ */
+.section {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  min-height: 60vh;
+  width: 100%;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  padding: 20vh 50px 20vh 75px;
+}
+.section svg {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50px;
+}
+.section svg.bottom {
+  bottom: 0;
+  top: auto;
+  fill: grey;
+}
+.section .section__inner {
+  height: 100%;
+  max-width: 800px;
+  margin: auto auto auto 0;
+}
+.section.section--hello {
+  background-color: #FDEF52;
+  color: #181818;
+}
+.section.section--intro {
+  background-color: white;
+  color: #555;
+}
+.section.section--about {
+  background-color: #de5f5f;
+  color: white;
+}
+.section.section--about svg {
+  fill: #de5f5f;
+}
+.section.section--clients {
+  background-color: #343436;
+  color: white;
+}
+.section.section--clients svg {
+  fill: #343436;
+}
+.section.section--portfolio {
+  background-color: orange;
+  color: white;
+}
+.section.section--portfolio svg {
+  top: -20px;
+  fill: orange;
+}
+.section.section--portfolio svg.bottom {
+  top: auto;
+  bottom: -50px;
+}
+.section.section--portfolio1 {
+  background-color: #3A99D8;
+  color: white;
+}
+.section.section--portfolio1 svg {
+  top: -50px;
+  fill: #3A99D8;
+}
+.section.section--pepperhill svg {
+  top: -50px;
+  fill: #3A99D8;
+}
+.section.section--contact svg {
+  fill: white;
+}
+
+/**
+ * Typo
+ */
+h1, .h1, h2, .h2, h3, .h3, h4, .h5 {
+  font-family: "nimbus-sans", sans-serif;
+  font-weight: bold;
+  margin: 0 0 1em;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+@media (min-width: 30rem) {
+  h1, .h1, h2, .h2, h3, .h3, h4, .h5 {
+    letter-spacing: -2px;
+  }
+}
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h5 a {
+  color: inherit;
+}
+h1 a:hover, .h1 a:hover, h2 a:hover, .h2 a:hover, h3 a:hover, .h3 a:hover, h4 a:hover, .h5 a:hover {
+  border-bottom: .1875rem solid;
+}
+h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h5 span {
+  color: #de5f5f;
+}
+
+h1, .h1 {
+  font-size: 1.2rem;
+}
+@media (min-width: 30rem) {
+  h1, .h1 {
+    font-size: 2.5rem;
+  }
+}
+
+h2, .h2 {
+  font-size: 1.2rem;
+}
+@media (min-width: 30rem) {
+  h2, .h2 {
+    font-size: 2.5rem;
+  }
+}
+
+.pre {
+  display: inline-block;
+  font-size: 12px;
+  margin: 0;
+  opacity: .8;
+  letter-spacing: 1.4px;
+  word-spacing: .2rem;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  color: inherit;
+}
+.pre span {
+  font-size: .9em;
+  margin-right: .4em;
+  opacity: .5;
+}
+.pre:hover {
+  opacity: 1;
+}
+
+p {
+  font-size: .75rem;
+  line-height: 1.4;
+}
+@media (min-width: 30rem) {
+  p {
+    font-size: .875rem;
+  }
+}
+p a {
+  font-weight: bold;
+  color: inherit;
+}
+p a:hover {
+  border-bottom: .1875rem solid;
+}
+
+.lead {
+  display: block;
+  font-size: .875rem;
+  margin: 0;
+}
+@media (min-width: 30rem) {
+  .lead {
+    font-size: 1rem;
+  }
+}
+
+.portfolio {
+  font-size: .75rem;
+}
+.portfolio.block {
+  display: inline-block;
+  width: 100%;
+}
+@media (min-width: 30rem) {
+  .portfolio.block {
+    width: 30%;
+  }
+}
+.portfolio .link {
+  display: block;
+  margin: 2em 0 0 0;
+  color: #555;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+.portfolio p {
+  font-size: inherit;
+  color: #343436;
+  opacity: .7;
+}
+
+    </style>
+</head>
+<body>
+    <script src="https://use.typekit.net/ehh4lya.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+<nav class="side">
+    <div class="side__inner">
+        <div class="top"><a href="#">Michele Malagnini</a></div>
+        <div class="bottom">
+            <a href="https://www.w3schools.com/default.asp" target="_blank">w3cSchool</a>
+            <a href="https://www.freecodecamp.com/" target="_blank">FreeCodeCamp</a>
+            <a target="_blank" href="https://codepen.io/">CodePen</a>
+        </div>
+    </div>
+</nav>
+
+<section class="section section--hello" id="hello">
+    <div class="section__inner">
+        <div class="block">
+            <a class="pre" href="#intro"><span>#0</span>Tutorial w3cSchool</a>
+            <h2>JAVASCRIPT</h2>
+            <ul class="anchornav">
+                <li><a href="#intro">Intro <span>#1 What is javascript?</span></a></li>
+                <li><a href="#about">About <span>#2 Who is this guy?</span></a></li>
+                <li><a href="#clients">Clients <span>#3 Who did he work for?</span></a></li>
+                <li><a href="#portfolio">Portfolio <span>#4 What did he do?</span></a></li>
+                <li><a href="#contact">Contact <span>#5 Write him a message</span></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="section section--intro" id="intro">
+    <div class="section__inner">
+        <div class="block">
+            <a class="pre" href="#intro"><span>#1</span>Intro</a>
+            <h1>Javascript is a<br>
+                web linguage<br>
+                taht we use to improve<br>
+                our HTML code</h1>
+            <p class="lead">
+              Hi <a href="#intro">everybody</a> this is my first javascript tutorial here you will find some <a href="#intro">javascript examlple</a> that help me and you to improve our javascript <a href="#intro">knowledge</a> , get down and start whit the <a href"#intro">first example</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section section--about" id="about">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+        <polygon points="100 0 100 10 0 10" />
+    </svg>
+
+    <div class="section__inner">
+        <div class="block">
+            <a class="pre" href="#about"><span>#2</span>Building</a>
+            <h2>Volker works for companies and agencies, creating responsive web applications.</h2>
+            <p class="lead">Building the right foundation to ongoing optimization and support. In short, he tries to make the web a better place.</p>
+        </div>
+    </div>
+
+</section>
+
+<section class="section section--clients" id="clients">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+        <polygon points="100 10 0 0 0 10" />
+    </svg>
+
+    <div class="section__inner">
+        <div class="block">
+            <a class="pre" href="#clients"><span>#3</span>Clients</a>
+            <h2>Volker works with corporations, institutions and startups in a wide range of industries.</h2>
+            <p class="lead">Here are some of his clients, he has had the pleasure working with:</p>
+        </div>
+    </div>
+
+</section>
+
+<section class="section section--portfolio1" id="portfolio">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
+    </svg>
+
+    <div class="section__inner">
+        <div class="block">
+            <a class="pre" href="#portfolio"><span>#4</span>Portfolio</a>
+            <h2>Portfolio Item #1</h2>
+            <p class="lead">Here are some of his clients, he has had the pleasure working with.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="section section--portfolio" id="portfolio2">
+    <div class="section__inner">
+        <div class="block">
+            <h2>Portfolio Item #2</h2>
+            <p>Descripton of said portfolio item.</p>
+        </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 102" preserveAspectRatio="none" class="bottom">
+        <path d="M0 0 L50 100 L100 0 Z"></path>
+    </svg>
+</section>
+
+
+<section class="section section--contact" id="contact">
+    <div class="section__inner">
+        <div class="block">
+            <a class="pre" href="#contact"><span>#5</span>Get in touch</a>
+            <h2>For work inquiries<br>please email:<br>
+                <span><a href="mailto:hello@volkerotto.net">hello@volkerotto.net</a></span></h2>
+            <p class="lead">More links: <a href="https://dribbble.com/hellovolker">Dribbble</a>, <a href="https://twitter.com/hellovolker">Twitter</a> and <a href="https://www.linkedin.com/in/ottovolker">Linkedin</a>.</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>
