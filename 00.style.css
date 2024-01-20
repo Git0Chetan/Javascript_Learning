@@ -1,20 +1,26 @@
+
 body{
     width:100vw;
     height: 100vh;
-    background: radial-gradient(rgb(165, 234, 165),white);
+    background: radial-gradient(rgb(164, 166, 164),white);
 }
 
 .container{
+    border: 2px solid;
+    border-radius: 15px;
+    box-shadow: -4px -4px 4px black , 4px 4px 4px black;
     display: flex;
     flex-direction: column;
-    margin: 5%;
+    margin:3% 8%;
+    padding: 2% 13%;
+    background-color: rgb(154, 163, 163);
 }
 
 .lab{
     display:flex;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(white,rgb(106, 233, 127));
+    background: radial-gradient(rgb(167, 161, 161),rgb(50, 55, 51));
     border-radius: 15px;
     margin:5%;
     padding:5%;
@@ -22,10 +28,11 @@ body{
 }
 
 .lab:hover{
-    background: radial-gradient(rgb(9, 170, 116),rgb(235, 242, 244));
+    background: radial-gradient(rgb(64, 67, 66),rgb(34, 37, 39));
 }
 
 .lab a{
     text-decoration: none;
     font-size: 50px;
+    color: aliceblue;
 }
