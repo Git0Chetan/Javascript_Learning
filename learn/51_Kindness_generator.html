@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Acts of Kindness Generator</title>
+
+  <style>
+    body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#kindnessOutput {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Random Acts of Kindness Generator</h1>
+    <button id="generateBtn">Generate Kindness</button>
+    <p id="kindnessOutput">Perform a random act of kindness today!</p>
+  </div>
+
+  <script>
+    const kindnessList = [
+  "Buy someone's coffee anonymously.",
+  "Leave a positive note for a colleague.",
+  "Help a neighbor with their groceries.",
+  "Donate to a local charity.",
+  "Compliment a stranger.",
+  "Send a handwritten letter to a friend.",
+  "Plant a tree in your community.",
+  "Offer to walk a neighbor's dog.",
+  "Volunteer your time at a local shelter.",
+  "Leave encouraging messages on sticky notes in public places."
+];
+
+document.getElementById('generateBtn').addEventListener('click', generateRandomKindness);
+
+function generateRandomKindness() {
+  const randomIndex = Math.floor(Math.random() * kindnessList.length);
+  const kindnessOutput = document.getElementById('kindnessOutput');
+  kindnessOutput.textContent = kindnessList[randomIndex];
+}
+
+  </script>
+</body>
+</html>
