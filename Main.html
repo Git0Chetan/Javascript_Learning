@@ -1,1 +1,69 @@
-created the webpage to show all learning projects.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Projects Showcase</title>
+    <style> 
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+    }
+    
+    .project-card {
+        width: 300px;
+        margin: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Mini Projects Showcase</h1>
+    </header>
+    <main id="projects-container"></main>
+
+    <script> 
+    document.addEventListener("DOMContentLoaded", function () {
+        const projectsContainer = document.getElementById("projects-container");
+    
+        const projects = [
+            { name: "Project 1", description: "Description 1", link: "project1/index.html" },
+            // ... Add details for the rest of your projects
+            { name: "Project 52", description: "Description 52", link: "project52/index.html" }
+        ];
+    
+        projects.forEach(project => {
+            const projectCard = document.createElement("div");
+            projectCard.className = "project-card";
+            projectCard.innerHTML = `
+                <h2>${project.name}</h2>
+                <p>${project.description}</p>
+                <a href="${project.link}" target="_blank">View Project</a>
+            `;
+            projectsContainer.appendChild(projectCard);
+        });
+    });
+</script>
+    
+</body>
+</html>
